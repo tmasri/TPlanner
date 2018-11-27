@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Viewer"
+    android:background="#fff"
+    tools:showIn="@layout/activity_viewer">
+
+    <LinearLayout
+        android:id="@+id/topBarViewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect"
+        android:elevation="5dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/backViewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="&#60;"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleViewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="left"
+            android:text="T Planner"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/deleteView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            android:text="Delete" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dateTimeViewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBarViewer"
+        android:text="Date and Time" />
+
+    <TextView
+        android:id="@+id/descLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/dateTimeViewer"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/descriptionViewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/descLabel"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/contactLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/descriptionViewer"
+        android:text="Contacts included in the meeting" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/contactLabel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contactListViewer"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Editor"
+    tools:showIn="@layout/activity_editor">
+
+    <LinearLayout
+        android:id="@+id/topBarEditor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect"
+        android:elevation="5dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/backEditor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="&#60;"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="left"
+            android:text="T Planner"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/nameEditor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topBarEditor"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Event Name"
+        android:inputType="textPersonName"
+        android:lineSpacingMultiplier="10"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nameEditor"
+        android:layout_marginTop="10dp"
+        android:id="@+id/startDateTime"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/startText"
+            android:text="Start"
+            android:layout_marginLeft="15dp"/>
+
+        <Button
+            android:id="@+id/dateEditor"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:text="Start Date"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/timeEditor"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dateEditor"
+            android:layout_toEndOf="@+id/dateEditor"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="Start Time"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/startDateTime"
+        android:layout_marginTop="-10dp"
+        android:id="@+id/endDateTime"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/endText"
+            android:text="End"
+            android:layout_marginLeft="15dp"/>
+
+        <Button
+            android:id="@+id/endDateEditor"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:text="End Date"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/endTimeEditor"
+            android:layout_width="193dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/endDateEditor"
+            android:layout_toEndOf="@+id/endDateEditor"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="End Time"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/descriptionEditor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/endDateTime"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/contactLabelEditor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/descriptionEditor"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Add Contacts"
+        android:textSize="20dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/contactLabelEditor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contact_list_editor"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</RelativeLayout>
