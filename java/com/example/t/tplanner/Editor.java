@@ -1,9 +1,7 @@
 package com.example.t.tplanner;
 
-import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -23,15 +21,10 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Editor extends AppCompatActivity implements View.OnClickListener {
@@ -350,8 +343,6 @@ public class Editor extends AppCompatActivity implements View.OnClickListener {
                 Cursor cursor = getContentResolver().query(contactData, null, null, null, null);
                 if (cursor.moveToFirst()) {
                     int phoneNumber = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-//                    int phoneId = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID);
-//                    int phoneName = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY);
                     String num = cursor.getString(phoneNumber);
                     contact.add(num);
                     getContacts();

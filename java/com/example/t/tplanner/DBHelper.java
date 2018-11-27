@@ -9,7 +9,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 2;
     public static final String DB_NAME = "Events";
     public static final String DB_TABLE = "schedule";
-    public static final int DB_VERSION = 1;
     private static final String CREATE_TABLE = "CREATE TABLE " + DB_TABLE +
             " (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
             "title TEXT NOT NULL," +

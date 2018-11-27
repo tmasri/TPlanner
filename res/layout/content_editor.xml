@@ -44,6 +44,7 @@
         android:layout_below="@+id/topBarEditor"
         android:layout_margin="10dp"
         android:ems="10"
+        android:maxLength="12"
         android:hint="Event Name"
         android:inputType="textPersonName"
         android:lineSpacingMultiplier="10"

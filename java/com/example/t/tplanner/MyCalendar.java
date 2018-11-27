@@ -1,7 +1,5 @@
 package com.example.t.tplanner;
 
-import android.util.Log;
-
 import java.util.Calendar;
 import java.util.Date;
 
@@ -138,8 +136,6 @@ public class MyCalendar {
     public void setDay(int d) {
 
         if (d <= 0) {
-            // date from previous month - d
-            // set new dates
             calendar.set(Calendar.MONTH, getMonthInt()-1);
             int numOfDays = calendar.getActualMaximum(Calendar.DATE);
             d = numOfDays - d;

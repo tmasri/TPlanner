@@ -1,6 +1,5 @@
 package com.example.t.tplanner;
 
-import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -8,23 +7,15 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.util.Calendar;
 
 public class Events extends AppCompatActivity {
 
@@ -49,7 +40,6 @@ public class Events extends AppCompatActivity {
         calendar = new MyCalendar();
 
         db = new DBHandler(this, "r");
-//        db.deleteAll();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
@@ -310,7 +300,6 @@ public class Events extends AppCompatActivity {
                 }
             }
 
-            Log.d("new start date = ", newCal.getDate());
             for (int i = 0; i < ids.length; i++) {
                 db.update(ids[i], "startDate", newCal.getDate());
             }
