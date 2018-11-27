@@ -2,6 +2,7 @@ package com.example.t.tplanner;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         requestPermissions(new String[]{
                 Manifest.permission.READ_CONTACTS}, PERMISSION_READ_CONTACTS);
 
@@ -30,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 startActivity(new Intent(MainActivity.this, Events.class));
                 finish();
-//            }
-//        }, 2000);
+            }
+        }, 2000);
 
     }
 

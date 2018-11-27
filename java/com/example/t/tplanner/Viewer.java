@@ -1,6 +1,7 @@
 package com.example.t.tplanner;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -38,6 +39,7 @@ public class Viewer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewer);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Intent i = getIntent();
         id = i.getIntExtra("id", 0);
@@ -91,6 +93,9 @@ public class Viewer extends AppCompatActivity {
             dateContent += " at "+ value.getString("time");
 
             descContent = value.getString("desc");
+            if (descContent.equals("")) {
+                descContent = "There is no description for this event";
+            }
 
             String contactString = value.getString("contacts");
             if (!contactString.equals("")) {
@@ -100,6 +105,15 @@ public class Viewer extends AppCompatActivity {
                     contactListViewer.addView(contactsList[i]);
                 }
 
+            } else {
+                TextView noContact = new TextView(this);
+                noContact.setText("There are no contacts for this event");
+
+                tf = font.light();
+                noContact.setTypeface(tf);
+                noContact.setTextSize(20);
+                noContact.setPadding(10, 0, 40, 40);
+                contactListViewer.addView(noContact);
             }
 
 

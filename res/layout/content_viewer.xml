@@ -46,50 +46,68 @@
             android:text="Delete" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/dateTimeViewer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/topBarViewer"
-        android:text="Date and Time" />
-
-    <TextView
-        android:id="@+id/descLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/dateTimeViewer"
-        android:text="Description" />
-
-    <TextView
-        android:id="@+id/descriptionViewer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/descLabel"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/contactLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/descriptionViewer"
-        android:text="Contacts included in the meeting" />
-
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_below="@+id/contactLabel">
+        android:layout_below="@+id/topBarViewer">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/contactListViewer"
-            android:orientation="vertical" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dateTimeViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Date and Time" />
+
+            <TextView
+                android:id="@+id/descLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/dateTimeViewer"
+                android:text="Description" />
+
+            <TextView
+                android:id="@+id/descriptionViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/descLabel"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/contactLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/descriptionViewer"
+                android:text="Contacts included in the meeting" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contactListViewer"
+                android:layout_below="@+id/contactLabel"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical" />
+
+        </RelativeLayout>
+
     </ScrollView>
+
+
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_below="@+id/contactLabel">-->
+
+        <!---->
+    <!--</ScrollView>-->
 
 </RelativeLayout>
